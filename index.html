@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Star Trek Spacecrafts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f9;
+        }
+        header {
+            background-color: #343a40;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            padding: 20px;
+        }
+        .spacecraft-card {
+            background-color: white;
+            padding: 20px;
+            margin: 10px 0;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .spacecraft-card h2 {
+            margin: 0;
+        }
+        .spacecraft-card .details {
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Star Trek Spacecrafts</h1>
+    </header>
+
+    <div class="container">
+        <div id="spacecraft-list">
+        </div>
+    </div>
+
+    <script>
+        const apiUrl = 'https://stapi.co/api/v2/rest/spacecraft/search';
+
+        async function fetchSpacecraftData() {
+            try {
+                const response = await fetch(apiUrl);
+                const data = await response.json();
+                
+                if (data && data.spacecrafts) {
+                    displaySpacecraftData(data.spacecrafts);
+                } else {
+                    throw new Error('No spacecraft data found');
+                }
+            } catch (error) {
+                console.error('Error fetching spacecraft data:', error);
+                document.getElementById('spacecraft-list').innerHTML = '<p>Sorry, something went wrong while fetching the spacecraft data.</p>';
+            }
+        }
+
+        function displaySpacecraftData(spacecrafts) {
+            const listContainer = document.getElementById('spacecraft-list');
+            listContainer.innerHTML = '';
+
+            spacecrafts.forEach(spacecraft => {
+                const card = document.createElement('div');
+                card.className = 'spacecraft-card';
+                
+                card.innerHTML = `
+                    <h2>${spacecraft.name}</h2>
+                    <div class="details">
+                        <p><strong>Class:</strong> ${spacecraft.spacecraftClass ? spacecraft.spacecraftClass.name : 'N/A'}</p>
+                        <p><strong>Model:</strong> ${spacecraft.model || 'N/A'}</p>
+                        <p><strong>Manufacturer:</strong> ${spacecraft.manufacturer || 'N/A'}</p>
+                        <p><strong>Length:</strong> ${spacecraft.length || 'N/A'}</p>
+                        <p><strong>Max Speed:</strong> ${spacecraft.maxSpeed || 'N/A'}</p>
+                    </div>
+                `;
+                
+                listContainer.appendChild(card);
+            });
+        }
+
+        fetchSpacecraftData();
+    </script>
+
+</body>
+</html>
