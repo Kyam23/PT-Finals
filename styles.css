@@ -1,0 +1,151 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    text-align: center;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+button {
+    background-color: #1abc9c;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border-radius: 50px;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+button:hover {
+    background-color: #16a085;
+    transform: scale(1.05);
+}
+
+button:focus {
+    outline: none;
+}
+
+main {
+    margin-top: 30px;
+}
+
+.cocktail-card {
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+    max-width: 500px;
+    width: 100%;
+    margin: 40px auto;
+    padding: 30px;
+    text-align: left;
+    transition: all 0.3s ease;
+}
+
+.cocktail-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.2);
+}
+
+.cocktail-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 20px;
+    transition: all 0.3s ease;
+}
+
+.cocktail-image:hover {
+    transform: scale(1.05);
+}
+
+#cocktail-name {
+    font-size: 2rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    color: #34495e;
+    text-transform: capitalize;
+}
+
+#cocktail-ingredients {
+    margin-top: 20px;
+}
+
+h3 {
+    font-size: 1.2rem;
+    color: #34495e;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+}
+
+ul li {
+    font-size: 1.1rem;
+    color: #555;
+    line-height: 1.5;
+    margin-bottom: 5px;
+}
+
+#cocktail-instructions {
+    font-size: 1.1rem;
+    color: #555;
+    margin-top: 20px;
+    text-align: justify;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 2rem;
+    }
+
+    .cocktail-card {
+        padding: 20px;
+    }
+
+    button {
+        padding: 12px 25px;
+        font-size: 1rem;
+    }
+
+    .cocktail-image {
+        margin-top: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    .cocktail-card {
+        padding: 15px;
+    }
+
+    button {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+
+    .cocktail-image {
+        max-height: 250px;
+    }
+}

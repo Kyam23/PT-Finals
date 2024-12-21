@@ -1,11 +1,12 @@
 {
-    "name": "Star Trek Spacecrafts",
-    "short_name": "Spacecrafts",
-    "description": "A web app that displays information about Star Trek spacecraft.",
+    "name": "Random Cocktail Generator",
+    "short_name": "Cocktail Generator",
+    "description": "Get a random cocktail recipe with ingredients and instructions.",
+    "version": "1.0",
     "start_url": ".",
     "display": "standalone",
-    "background_color": "#343a40",
-    "theme_color": "#f4f4f9",
+    "background_color": "#f8f9fa",
+    "theme_color": "#1abc9c",
     "icons": [
         {
             "src": "icons/manifest-icon-192.maskable.png",
@@ -32,5 +33,4 @@
             "purpose": "maskable"
         }
     ]
-  }
-  
+}
